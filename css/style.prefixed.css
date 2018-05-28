@@ -1,0 +1,31 @@
+.container { margin: 0 auto; max-width: 1200px; }
+
+.board h1 { color: palevioletred; font-family: 'Butterfly Kids'; font-size: 100px; line-height: 64px; margin: 40px auto; padding-bottom: 30px; text-align: center; text-transform: uppercase; width: 450px; }
+
+.create-column { background-color: #437F3C; color: #da1cba; display: block; font-size: 16px; height: 50px; margin: 0 auto; width: 160px; }
+
+.create-column p { float: left; margin: 0; }
+
+.create-column .fa { float: right; }
+
+.column-container { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-pack: center; justify-content: center; margin-top: 60px; }
+
+.column { -ms-flex-align: center; align-items: center; background-color: #437F3C; border-radius: 5px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35); -ms-flex: 1; flex: 1; -ms-flex-pack: center; justify-content: center; margin: 0px 25px 30px; max-width: 340px; min-height: 380px; min-width: 340px; }
+
+.column-title { border-bottom: 8px solid #da1cba; font-family: 'Roboto Slab', serif; font-size: 32px; line-height: 65px; margin-bottom: 16px; margin-top: -25px; text-align: center; color: #da1cba; }
+
+.column-card-list { list-style-type: none; min-height: 200px; padding: 5px; }
+
+.btn-delete { background-color: #fff0; border: none; font-size: 20px; margin-left: calc(100% - 40px); margin-top: 12px; }
+
+.add-card { background-color: white; border: none; border-radius: 50%; font-size: 20px; height: 27px; line-height: 0px; margin-left: 20px; width: 27px; }
+
+.card { background-color: #ffffff; border-radius: 8px; list-style-type: none; margin: 10px; min-height: 30px; padding: 2px 0; }
+
+.card-description { color: #437F3C; font-family: 'Open Sans', sans-serif; margin: 10px 50px; width: 75%; }
+
+.card-delete { background-color: #FFF; border: none; color: grey; cursor: pointer; display: block; float: right; margin-right: 10px; margin-top: 11px; text-transform: uppercase; }
+
+.card-placeholder { background-color: rgba(255, 255, 255, 0.55); border: 1px dashed rgba(0, 0, 0, 0.3); border-radius: 5px; }
+
+.edit { background-color: #FFF; border: none; color: grey; cursor: pointer; display: block; float: left; margin-left: 10px; margin-top: -29px; text-transform: uppercase; }
