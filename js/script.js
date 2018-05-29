@@ -25,20 +25,22 @@ $(function() {
       $columnDelete.click(function () {
         self.removeColumn();
       });
+
       $columnAddCard.click(function(event) {
 
         var input = prompt("Wpisz nazwę kolumny");
+
         if (input) {
           self.addCard(new Card(input));
         } else if (input === "") {
           alert('Popraw nazwę');
         }}
       );
+
       $column.append($columnDelete)
       .append($columnTitle)
       .append($columnAddCard)
       .append($columnCardList);
-
       return $column;
     }
   }
