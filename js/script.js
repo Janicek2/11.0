@@ -110,7 +110,8 @@ $(function() {
       forcePlaceholderSize: true,
       dropOnEmpty: true,
       tolerance: 'intersect'
-    }).disableSelection();
+    })
+    .disableSelection();
   }
 
   $('.create-column').click(function() {
