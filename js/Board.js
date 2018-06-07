@@ -25,10 +25,10 @@ var board = {
         url: baseUrl + '/column',
         method: 'POST',
         data: {
-          name: columnName
+          name: name
         },
         success: function(response) {
-          var column = new Column(response.id, columnName);
+          var column = new Column(response.id, name);
           board.addColumn(column);
         }
       });

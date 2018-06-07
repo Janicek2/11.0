@@ -1,29 +1,27 @@
 function Card(id, name) {
   var self = this;
-
 	this.id = id;
 	this.name = name;
-	this.columnID = columnID;
 	this.$element = createCard();
 
-    function createCard() {
-      var $card = $('<li>').addClass('card restored-item');
-      var $cardDescription = $('<p>').addClass('card-description').text(self.name);
-      var $cardDelete = $('<button>').addClass('card-delete').append('<i class="fa fa-minus"></i>');
-      var $cardEdit = $('<button>').addClass('edit').append('<i class="fa fa-pencil"></i>');
+  function createCard() {
+    var $card = $('<li>').addClass('card restored-item');
+    var $cardDescription = $('<p>').addClass('card-description').text(self.name);
+    var $cardDelete = $('<button>').addClass('card-delete').append('<i class="fa fa-minus"></i>');
+    var $cardEdit = $('<button>').addClass('edit').append('<i class="fa fa-pencil"></i>');
 
-      $cardDelete.click(function () {
-        self.removeCard();
-      });
+    $cardDelete.click(function () {
+      self.removeCard();
+    });
 
-      $cardEdit.click(function () {
-        self.cardEdit($cardDescription);
-      });
+    $cardEdit.click(function () {
+      self.cardEdit($cardDescription);
+    });
 
-      $card.append($cardDelete)
-      .append($cardDescription)
-      .append($cardEdit);
-      return $card;
+    $card.append($cardDelete)
+    .append($cardDescription)
+    .append($cardEdit);
+    return $card;
     }
   }
 
@@ -47,11 +45,11 @@ function Card(id, name) {
           url: baseUrl + '/card/' + self.id,
           method: 'PUT',
           data: {
-            name: newDescription,
+            name: $newDescription,
             bootcamp_kanban_column_id: columnID
           },
           success: function (response) {
-            self.$element.children('p').text(newDescription);
+            self.$element.children('p').text($newDescription);
           }
         });
       }

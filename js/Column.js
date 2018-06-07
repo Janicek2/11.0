@@ -1,11 +1,9 @@
 function Column(id, name) {
 var self = this;
-
 this.id = id;
 var columnID = id;
 this.name = name || 'No name given';
 this.$element = createColumn();
-
 
 function createColumn() {
   var $column = $('<div>').addClass('column');
@@ -15,27 +13,28 @@ function createColumn() {
   var $columnAddCard = $('<button>').addClass('add-card').text('+');
 
 $columnDelete.click(function () {
-  self.removeColumn();
+  self.deleteColumn();
 });
 
 $columnAddCard.click(function(event) {
 
   var input = prompt("Wpisz nazwę kolumny");
+  event.preventDefault();
 
   if (input) {
     $.ajax({
       url: baseUrl + '/card',
       method: 'POST',
       data: {
-        name: cardName,
-        bootcamp_kanban_column_id: id
+        name: input,
+        bootcamp_kanban_column_id: self.id
       },
       success: function(response) {
-        var card = new Card(response.id, cardName, columnID);
+        var card = new Card(response.id, input);
         self.addCard(card);
       }
     });
-  } else if (input === "") {
+  } else {
     alert('Popraw nazwę');
   }}
 );
@@ -52,7 +51,7 @@ Column.prototype = {
   addCard: function(card) {
     this.$element.children('ul').append(card.$element);
   },
-  removeColumn: function () {
+  deleteColumn: function () {
     var self = this;
     $.ajax({
       url: baseUrl + '/column/' + self.id,
